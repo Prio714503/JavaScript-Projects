@@ -1,6 +1,6 @@
 
 //Window.alert method
-window.alert()
+window.alert();
 document.write("Hello, World!");
 
 //Document write method
@@ -34,6 +34,12 @@ document.write(Mercedes);
 let obj = {};
 obj.x = 3;
 document.write(obj.x);
+
+//Concatenate 2 variables
+var a = "yourname";
+var b = "youlastname";
+var name = a + b;
+
 
 
 
