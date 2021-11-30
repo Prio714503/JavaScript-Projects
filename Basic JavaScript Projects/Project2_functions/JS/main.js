@@ -13,11 +13,19 @@ function ShowMessage(firstName, lastName) {
 }
 ShowMessage("Phillip", "Rios");
 
+// Function performs a calculation
 
-// Function expression
+var x = myFunction(4, 3);
+document.getElementById("practice").innerHTML = x;
 
- var add = function sum(val1, val2) {
-    return val1 + val2;
-};
-document.getElementById("p1").innerHTML = add(20,20);
-document.getElementById("p2").innerHTML = sum(20,20);
+function myFunction(a, b) {
+  return a * b;
+}
+
+// Function agruments
+
+function message(user, message) {
+    document.write("User: " + user + " || Message: " + message + "<br>");
+  }
+  message("Pete", "How are you?");
+  message("Johnny", "I'm fine.");
