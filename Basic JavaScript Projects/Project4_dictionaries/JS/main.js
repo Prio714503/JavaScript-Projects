@@ -15,7 +15,7 @@ function my_Dictionary () {
 function my_carCollection () {
     var Sportscar = {
         Bodystyle:"Coupe",
-        Color:"red",
+        Color:"Red",
         Engine:"Gas",
         Trim:"RS",
         Year:2021
@@ -29,7 +29,7 @@ function my_carCollection () {
 function my_eCarCollection () {
     var electricCar = {
         Bodystyle:"Coupe",
-        Color:"red",
+        Color:"Silver",
         Drivetrain:"Eletric",
         Trim:"ES",
         Year:2022

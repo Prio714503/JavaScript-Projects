@@ -3,7 +3,7 @@
 window.alert();
 document.write("Hello, World!");
 
-//Document write method
+//Document.write method
 var x = "Hello, World!";
 document.write(x);
 
