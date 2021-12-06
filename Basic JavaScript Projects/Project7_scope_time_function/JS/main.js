@@ -13,7 +13,6 @@ function helloWorld() {
 // Global variable
 
 let firstName = "Boss Hog";
-myFunction();
 
 function myFunction() {
   document.getElementById("globalVariable").innerHTML = "Hello, my name is " + firstName;
@@ -41,7 +40,7 @@ function my_Function() {
 // If/Else statement
 
 function Age_Function() {
-  Age = document.getElementById("Age"). Value;
+  Age = document.getElementById("Age").value;
   if (Age >= 18) {
     Vote = "You are old enough to vote!";
   }
@@ -69,7 +68,7 @@ function timeFunction() {
 
 // Else If Statement
 
-function Time_function() {
+  function timeOfDayFunction() {
   var Time = new Date() .getHours();
   var Reply;
   if (Time < 12 == Time > 0) {
