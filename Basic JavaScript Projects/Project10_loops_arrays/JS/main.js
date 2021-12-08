@@ -138,7 +138,6 @@ document.getElementById("themApples").innerHTML = text;
 
 // Utilizing the Continue statement
 
-
 const dogs = ["Pitbull", "Shepard", "Ridgeback", "Bulldog", "Chow", "Russell", "Mutt", "Lab", "Golden"];  
 let i = 0;  
 let text1 = "";  
@@ -148,12 +147,10 @@ while(i < dogs.length){
     i++;  
     continue;  
   }  
-  text1 = "";  
-  text1 += dogs[i] + "<br>";  
-  i++;  
-   
+    text1 += dogs[i] + "<br>";  
+  i++;    
 }  
-document.getElementById("dogList").innerHTML = dogs.text1;
+document.getElementById("dogList").innerHTML = text1;
 
 
 
