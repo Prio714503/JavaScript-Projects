@@ -2,6 +2,7 @@
 
 
 // While Loop
+
 function Call_Loop() {
     var sum = 0;
     var num = 0;
@@ -15,6 +16,7 @@ document.getElementById("Loops").innerHTML = sum;
 
 
 // While Loop using array
+
 function Array_Loop() {
    var randomStuff = ["bacon", "apple", 1245, "burgers", "cake", "steak"];
    var x = 0;
@@ -27,6 +29,7 @@ function Array_Loop() {
 
 
 // Length property returns length of a string
+
 function addEmUp() {
 let text = "What a beautiful day in the neighborhood!";
 let length = text.length;
@@ -37,6 +40,7 @@ document.getElementById("getLength").innerHTML = length;
 
 
 //For Loop using the length property
+
 var Fruits = ["Pear", "Apple", "Mango", "Pineapple", "Cherries", "Avocado"];
 var Content = "";
 var Y;
@@ -48,6 +52,7 @@ function for_Loop() {
 }
 
 // Array within a function to be called
+
 function array_Function() {
     var Top_Pick = [];
     Top_Pick[0] = "Audi RS";
@@ -72,6 +77,7 @@ function constant_function() {
 
 
 // Utilizing the Let keyword
+
 function addingNumbers() {
     let a = 40;
     let b = 30;
@@ -90,13 +96,69 @@ document.getElementById("demo").innerHTML = myFunction("Tech Academy");
 
  
 
-
 var x = my_Function(4, 3); 
 
 function my_Function(a, b) {
   return a * b;   
 }  
 document.getElementById("add").innerHTML = x;
+
+
+
+// An Object with properties and a method/ using "this" keyword
+
+let phone = {
+    brand: "iPhone ",
+    model: "10 Plus ",
+    color: "blue ",
+    mfg_date: "2018 ",
+    description : function() {
+        return " You're cool if you have a " + this.mfg_date + this.brand + this.model + "and it is " + this.color; 
+    }
+};
+document.getElementById("newPhone").innerHTML = phone.description();
+
+
+
+// Utilizing the Break statement
+
+const apples = ["Gala", "Granny", "Honeycrisp", "Fuji", "Golden"];
+let text = "";
+
+lists: {
+    text += apples[0] + "<br>";
+    text += apples[1] + "<br>";
+    break lists;
+    text += apples[2] + "<br>";
+    text += apples[3] + "<br>";
+}
+
+document.getElementById("themApples").innerHTML = text;
+
+
+// Utilizing the Continue statement
+
+
+const dogs = ["Pitbull", "Shepard", "Ridgeback", "Bulldog", "Chow", "Russell", "Mutt", "Lab", "Golden"];  
+let i = 0;  
+let text1 = "";  
+while(i < dogs.length){  
+  
+  if (dogs[i] == "Ridgeback" || dogs[i] == "Chow") {  
+    i++;  
+    continue;  
+  }  
+  text1 = "";  
+  text1 += dogs[i] + "<br>";  
+  i++;  
+   
+}  
+document.getElementById("dogList").innerHTML = dogs.text1;
+
+
+
+
+
 
   
 
