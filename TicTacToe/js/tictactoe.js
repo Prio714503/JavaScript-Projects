@@ -159,13 +159,13 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     // This line indicates where the end of the lines x axis is.
     y2 = coordY2,
     // This variable stores temporary x axis data we update in our animation loop.
-    x = xl,
+    x = x1,
     // This variable stores temporary y axis data we update in our animation loop.
-    y = yl;
+    y = y1;
 
 
-// this function interacts with the canvas
-function animateLineDrawing() {
+   // this function interacts with the canvas
+  function animateLineDrawing() {
     // This variable creates a loop.
     const animationLoop = requestAnimationFrame(animateLineDrawing);
     // This method clears content from last loop iteration.
@@ -192,6 +192,8 @@ function animateLineDrawing() {
         // if we've reached the end points.
         if(x >= x2 && y >= y2) {cancelAnimationFrame(animationLoop); }
     }
+
+
     // This condition is similar to the one above.
     // This is necessary for the 6, 4, 2 win condition.
     if ( x1 <= x2 && y1 >= y2) {
@@ -199,7 +201,8 @@ function animateLineDrawing() {
         if (y > y2) { y -= 10; }
         if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop); }
     }
-}
+  }
+
 
      // This function clears our canvas after our win line is drawn.
     function clear() {
@@ -227,7 +230,7 @@ function resetGame() {
     // This for loop iterates through each HTML square element.
     for (let i = 0; i < 9; i++) {
         // This variable gets the html element of i.
-        let square = document.getElementById(string(i))
+        let square = document.getElementById(String(i))
         // This removes our element backgroundImage.
         square.style.backgroundImage = ''
     }
