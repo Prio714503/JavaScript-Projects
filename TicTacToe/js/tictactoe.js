@@ -173,7 +173,7 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     // This method starts a new path
     c.beginPath();
     // This method moves us to a starting point for our line.
-    c.moveTo(xl, yl)
+    c.moveTo(x1, y1)
     // This method indicates the end point in our line.
     c.lineTo(x, y)
     // This method set the width of our line.
@@ -183,7 +183,7 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     // This method draws out everything above.
     c.stroke();
     // This condition check if we've reached the end point.
-    if (xl <= x2 && y1 <= y2) {
+    if (x1 <= x2 && y1 <= y2) {
         // This condition adds 10 to the previous end x point.
         if (x < x2) { x += 10; }
         // This condition adds 10 to the previous end y point.
