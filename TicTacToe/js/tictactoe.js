@@ -14,7 +14,7 @@ function placeXOrO(squareNumber) {
         let select = document.getElementById(squareNumber);
         // This condition checks who's turn it is.
         if (activePlayer === 'X') {
-            // If activePlayer is equal to 'X', the x.png is placed in HTML.
+            // If activePlayer is equal to 'X', the x.jpg is placed in HTML.
             select.style.backgroundImage = 'url("images/x.jpg")';
             // Active player may only be 'X' or 'O' so, if not 'X' it must be 'O'
         } else {
@@ -28,6 +28,8 @@ function placeXOrO(squareNumber) {
         // This condition is for changing the activePlayer.
         if (activePlayer === 'X') {
             // If activePlayer is 'X' change it to 'O'.
+            activePlayer = 'O';
+            // If active player is anything other than 'X'.
         } else {
             // Change the activePlayer to 'X'.
             activePlayer = 'X';
@@ -35,13 +37,13 @@ function placeXOrO(squareNumber) {
 
 
         // This function plays placement sound.
-        Audio('./media/place.mp3');
+        audio('./media/place.mp3');
         // This condition checks to see if it is computers turn.
         if(activePlayer === 'O') {
             // This function disables clicking for computer choice.
             disableClick();
             // This function waits 1 second before computer places image and enables click.
-            setTimeout(function () { computerTurn(); }, 1000)
+            setTimeout(function () { computersTurn(); }, 1000)
         }
         // Returning true is needed for our computersTurn() functionto work.
         return true;
@@ -60,7 +62,7 @@ function placeXOrO(squareNumber) {
             if (placeXOrO(pickASquare)) {
                 // This line calls the function.
                 placeXOrO(pickASquare);
-                // This changfes our boolean and ends the loop.
+                // This changes our boolean and ends the loop.
                 success = true;
             };
         }
@@ -106,7 +108,7 @@ function checkWinConditions() {
     // squares are selected the code executes.
     else if (selectedSquares.length >= 9) {
         // This function plays the tie game sound.
-        Audio('./media/tie.mp3');
+        audio('./media/tie.mp3');
         // This fuction sets a .3 second timer before the resetGame is called.
         setTimeout(function () { resetGame(); }, 1000);
     }
@@ -120,7 +122,7 @@ function checkWinConditions() {
         const c = selectedSquares.includes(squareC)
         // If the 3 variables we pass are all included in our array true is
         // returned and our else if condition executes the drawWinLine function.
-        if (a === true && b === true && c === true) {return true }
+        if (a === true && b === true && c === true) { return true }
     }
 }
 
@@ -130,7 +132,7 @@ function disableClick() {
     // This makes our body unclickable.
     body.style.pointerEvents = 'none';
     // This makes our body clickable again after 1 second.
-    setTimeout(function() {body.stlye.pointerEvents = 'auto';}, 1000);
+    setTimeout(function() {body.style.pointerEvents = 'auto';}, 1000);
 }
 
 // This function takes a string parameter of the path you set earlier for
@@ -143,13 +145,13 @@ function audio(audioURL) {
 }
 
 // This function utilizes html canvas to draw win lines.
-function drawWinLines(coordX1, coordY1, coordY2) {
+function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     // This line accesses out html canvas element.
     const canvas = document.getElementById('win-lines')
     // This line gives us access to methods and properties to use on canvas.
     const c = canvas.getContext('2d');
     // This line indicates where the start of a line x axis is.
-    let x1 = coordX1,
+ let x1 = coordX1,
     // This line indicates where the start of lines y axis is.
     y1 = coordY1,
     // This line indicates where the end of the lines x axis is.
@@ -169,7 +171,7 @@ function animateLineDrawing() {
     // This method clears content from last loop iteration.
     c.clearRect(0, 0, 608, 608)
     // This method starts a new path
-    c.begin.Path();
+    c.beginPath();
     // This method moves us to a starting point for our line.
     c.moveTo(xl, yl)
     // This method indicates the end point in our line.
@@ -179,7 +181,7 @@ function animateLineDrawing() {
     // This method set the color of our line.
     c.strokeStyle = 'rgba(70, 255, 33, .8)';
     // This method draws out everything above.
-    c.stroke;
+    c.stroke();
     // This condition check if we've reached the end point.
     if (xl <= x2 && y1 <= y2) {
         // This condition adds 10 to the previous end x point.
@@ -192,7 +194,7 @@ function animateLineDrawing() {
     }
     // This condition is similar to the one above.
     // This is necessary for the 6, 4, 2 win condition.
-    if( x1 <= x2 && y1 >= y2) {
+    if ( x1 <= x2 && y1 >= y2) {
         if (x < x2) { x += 10; }
         if (y > y2) { y -= 10; }
         if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop); }
@@ -220,10 +222,10 @@ function animateLineDrawing() {
 
 }
 
-// This function reset the game in the event of a tie or win.
+// This function resets the game in the event of a tie or a win.
 function resetGame() {
     // This for loop iterates through each HTML square element.
-    for (let i = 0; 1 < 9; i++) {
+    for (let i = 0; i < 9; i++) {
         // This variable gets the html element of i.
         let square = document.getElementById(string(i))
         // This removes our element backgroundImage.
